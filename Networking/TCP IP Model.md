@@ -1,7 +1,7 @@
-- **Application Layer**: The OSI model application, presentation and session layers, i.e., layers 5, 6, and 7, are grouped into the application layer in the TCP/IP model.
-- **Transport Layer**: This is layer 4.
-- **Internet Layer**: This is layer 3. The OSI model’s network layer is called the Internet layer in the TCP/IP model.
-- **Link Layer**: This is layer 2.
+**Application Layer**: The OSI model application, presentation and session layers, i.e., layers 5, 6, and 7, are grouped into the application layer in the TCP/IP model.
+**Transport Layer**: This is layer 4.
+**Internet Layer**: This is layer 3. The OSI model’s network layer is called the Internet layer in the TCP/IP model.
+**Link Layer**: This is layer 2.
 
 | Layer Number | ISO OSI Model      | TCP/IP Model      | Protocols                                        |
 | ------------ | ------------------ | ----------------- | ------------------------------------------------ |
