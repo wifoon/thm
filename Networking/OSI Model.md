@@ -22,3 +22,9 @@ Layer 4, the transport layer, enables end-to-end communication between running a
 
 Examples of layer 4 are Transmission Control Protocol (TCP) and User Datagram Protocol (UDP).
 
+#### Layer 5: Session Layer
+
+The session layer is responsible for establishing, maintaining, and synchronising communication between applications running on different hosts. Establishing a session means initiating communication between applications and negotiating the necessary parameters for the session. Data synchronisation ensures that data is transmitted in the correct order and provides mechanisms for recovery in case of transmission failures.
+
+Examples of the session layer are Network File System (NFS) and Remote Procedure Call (RPC).
+
