@@ -28,3 +28,7 @@ The session layer is responsible for establishing, maintaining, and synchronisin
 
 Examples of the session layer are Network File System (NFS) and Remote Procedure Call (RPC).
 
+#### Layer 6: Presentation Layer
+
+The presentation layer ensures the data is delivered in a form the application layer can understand. Layer 6 handles data encoding, compression, and encryption. An example of encoding is character encoding, such as ASCII or Unicode.
+
