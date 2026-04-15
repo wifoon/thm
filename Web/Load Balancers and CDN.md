@@ -9,3 +9,4 @@ Load balancers also perform periodic checks with each server to ensure they are 
 **CDN (Content Delivery Networks)**
 
 CDN is a distributed group of servers close to end users, that stores content for websites and applications, reducing latency and accelerating load times. By directing user requests to the nearest **edge server** rather than a central origin server, CDNs improve website performance, security, and reliability.
+
