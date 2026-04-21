@@ -17,6 +17,7 @@ gcloud config list project
 Setting the default projects region and zone:
 
 ```bash
+# Setting region and zone
 gcloud config set compute/region europe-west1
 gcloud config set compute/zone europe-west1-b
 ```
@@ -115,27 +116,33 @@ curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='valu
 Viewing logs is essential to understanding the working of project. Use `gcloud` to access the different logs available on Google Cloud.
 
 **Filtering**:
-Użycie flagi `--filter` do wyszukiwania zasobów.
+
+Using the `--filter` flag to filter the output.
 ```bash
-gcloud compute instances list --filter="name=('gcelab2')"  # Filtrowanie po nazwie 
+# Filtering the list of instances by name
+gcloud compute instances list --filter="name=('gcelab2')"
+# Filtering the list of rules by network and allow
 gcloud compute firewall-rules list --filter="NETWORK:'default' AND ALLOW:'icmp'" 
 ```
 
 **Cloud Logging**:
-Odczytywanie logów systemowych i audytowych.
+Reading system and audit logs.
 
 ```bash
-gcloud logging logs list --filter="compute"              # Filtrowanie list logów 
-gcloud logging read "resource.type=gce_instance" --limit 5  # Odczyt logów instancji
-gcloud logging read "resource.type=gce_instance AND labels.instance_name='gcelab2'" --limit 5 #
+gcloud logging logs list --filter="compute"
+gcloud logging read "resource.type=gce_instance" --limit 5
+gcloud logging read "resource.type=gce_instance AND labels.instance_name='gcelab2'" --limit 5
 ```
  
 ---
 
 ### SDK Components
-Zarządzanie komponentami CLI.
+
+CLI Component Management.
 
 ```bash
-gcloud components list      # Wyświetlenie zainstalowanych narzędzi (np. bq, gsutil) [cite: 32]
-gcloud components update    # Aktualizacja CLI do najnowszej wersji [cite: 34]
+# Displaying installed tools (e.g. bq, gsutil)
+gcloud components list
+# Update CLI to latest version
+gcloud components update
 ```
