@@ -75,25 +75,34 @@ sudo apt update && sudo apt install -y nginx
 ---
 
 ### Networking & Firewall
-Zastosowanie tagów sieciowych do kontroli ruchu przez firewall.
 
-**Apply Tags**:
+Adding a rule to a firewall in a project and displaying existing rules.
+
+```bash
+# List the firewall rules in the project
+gcloud compute firewall-rules list
+```
+
+Add the VM a tag to bind that tag to a firewall rule to open port 80 only for machines with that tag
+
 ```bash
 gcloud compute instances add-tags gcelab2 --tags http-server,https-server
-# Nadanie tagów
 ```
+
+
 **Firewall Rules**:
-Zezwolenie na ruch przychodzący (ingress) na porcie 80 dla instancji z tagiem `http-server`.
+Incoming traffic permission on port 80 for instances with `http-server` tag.
 
 ```bash
 gcloud compute firewall-rules create default-allow-http \
         --direction=INGRESS --priority=1000 --network=default \
         --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 \
-        --target-tags=http-server  # Utworzenie reguły [cite: 62]
+        --target-tags=http-server
 ```
 
-**Verification**:
-Testowanie dostępności serwera nginx przez zewnętrzny IP.
+
+Verify communication is possible for http to the virtual machine:
+
 ```bash
 curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='value(EXTERNAL_IP)')
 ```
@@ -102,7 +111,8 @@ curl http://$(gcloud compute instances list --filter=name:gcelab2 --format='valu
 ---
 
 ### Filtering & Logging
-Wyciąganie precyzyjnych informacji z dużej ilości danych.
+
+Viewing logs is essential to understanding the working of project. Use `gcloud` to access the different logs available on Google Cloud.
 
 **Filtering**:
 Użycie flagi `--filter` do wyszukiwania zasobów.
