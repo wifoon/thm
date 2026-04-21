@@ -1,23 +1,32 @@
 
-Zarządzanie zasobami Google Cloud z poziomu terminala. Notatka na podstawie labu **Getting Started with Cloud Shell and gcloud**.
+Google Cloud Resource Management via Terminal, basic uses of gcloud cli.
 
 ---
-
 ### Environment Configuration
-Narzędzie `gcloud` przechowuje właściwości (properties), które determinują domyślne zachowanie komend.
 
-**Identification**:
+The `gcloud` tool stores properties that determine the default behavior of commands.
+
+List the active account name and project ID:
+
 ```bash
 gcloud auth list
 gcloud config list project
 ```
 
-**Regions & Zones**:
-Ustawienie domyślnej lokalizacji geograficznej dla zasobów (zonal/regional).
+
+Setting the default projects region and zone:
+
 ```bash
 gcloud config set compute/region europe-west1
 gcloud config set compute/zone europe-west1-b
 ```
+
+```bash
+# To view the project region and zone setting
+gcloud config get-value compute/region
+gcloud config get-value compute/zone
+```
+
 
 **Environment Variables**:
 Przechowywanie ID projektu i strefy w zmiennych powłoki dla automatyzacji skryptów.
