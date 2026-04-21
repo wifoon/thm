@@ -35,11 +35,3 @@ Most Google Cloud features are exposed via **APIs**. By default, many APIs are d
 The Dialogflow API allows building conversational interfaces (chatbots) using machine learning.
 
 `APIs & Services` -> `Library`.
-
-To verify or enable via **Cloud Shell (gcloud CLI)**:
-```bash
-# List enabled services
-gcloud services list --enabled
-
-# Enable a specific service
-gcloud services enable dialogflow.googleapis.com
